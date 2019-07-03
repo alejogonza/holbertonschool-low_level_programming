@@ -8,21 +8,15 @@
  */
 int _atoi(char *s)
 {
-	unsigned int c;
-	unsigned int to;
-	unsigned int sti;
-	unsigned int pr;
-	unsigned int sw;
+	unsigned int c = 0;
+	unsigned int to = 0;
+	unsigned int sti = 0;
+	unsigned int pr = 1;
+	unsigned int sw = 1;
 	unsigned int i;
-	int sr;
+	int sr = 0;
 	int var1;
 
-	c = 0;
-	sr = 0;
-	to = 0;
-	sti = 0;
-	pr = 1;
-	sw = 1;
 	var1 = sti * pr;
 
 	while (*(s + c) != '\0')
