@@ -1,23 +1,26 @@
 #include "holberton.h"
 
 /**
- * puts2 - prints one char out of 2 of a string.
- * @str: input string.
- * Return: no return.
+ * puts2 - entry point
+ * Description: print char out of a string.
+ * @str: string
+ * Return: 0
  */
 void puts2(char *str)
 {
-	int count = 0;
+	int c = 0;
+	int sc = 0;
 
-	while (count >= 0)
+	while (c >= 0)
 	{
-		if (str[count] == '\0')
+		if (str[c] == '\0')
 		{
 			_putchar('\n');
 			break;
+			sc++;
 		}
-		if (count % 2 == 0)
-			_putchar(str[count]);
-		count++;
+		if (c % 2 == 0)
+			_putchar(str[c]);
+		c++;
 	}
 }

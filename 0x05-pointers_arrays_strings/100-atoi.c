@@ -1,35 +1,52 @@
 #include "holberton.h"
 
 /**
- * _atoi - converts a string to an integer.
- * @s: input string.
+ * _atoi - entry point
+ * Description: string to an integer.
+ * @s: string.
  * Return: integer.
  */
 int _atoi(char *s)
 {
-	unsigned int count = 0, size = 0, oi = 0, pn = 1, m = 1, i;
+	unsigned int c;
+	unsigned int to;
+	unsigned int sti;
+	unsigned int pr;
+	unsigned int sw;
+	unsigned int i;
+	int sr;
+	int var1;
 
-	while (*(s + count) != '\0')
+	c = 0;
+	sr = 0;
+	to = 0;
+	sti = 0;
+	pr = 1;
+	sw = 1;
+	var1 = sti * pr;
+
+	while (*(s + c) != '\0')
 	{
-		if (size > 0 && (*(s + count) < '0' || *(s + count) > '9'))
+		if (to > 0 && (*(s + c) < '0' || *(s + c) > '9'))
 			break;
 
-		if (*(s + count) == '-')
-			pn *= -1;
+		if (*(s + c) == '-')
+			pr *= -1;
 
-		if ((*(s + count) >= '0') && (*(s + count) <= '9'))
+		if ((*(s + c) >= '0') && (*(s + c) <= '9'))
 		{
-			if (size > 0)
-				m *= 10;
-			size++;
+			if (to > 0)
+				sw *= 10;
+			to++;
 		}
-		count++;
+		c++;
+		sr++;
 	}
 
-	for (i = count - size; i < count; i++)
+	for (i = c - to; i < c; i++)
 	{
-		oi = oi + ((*(s + i) - 48) * m);
-		m /= 10;
+		sti = sti + ((*(s + i) - 48) * sw);
+		sw = sw / 10;
 	}
-	return (oi * pn);
+	return (var1);
 }
