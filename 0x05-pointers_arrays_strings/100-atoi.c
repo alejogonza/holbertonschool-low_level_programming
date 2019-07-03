@@ -15,8 +15,8 @@ int _atoi(char *s)
 	int rt = 0;
 	short bl = 0;
 	int sr = 0;
-	ms = -1;
 
+	ms = -1;
 	while (s[in] != '\0')
 	{
 		if (s[in] == '-')
