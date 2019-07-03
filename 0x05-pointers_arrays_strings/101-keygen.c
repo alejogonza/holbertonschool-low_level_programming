@@ -6,28 +6,24 @@
  * Description: my keygen.
  * Return: 0.
  */
+
 int main(void)
 {
-	int k;
-	int i;
-	int sk;
+	int kn = 0;
+	int in = 0;
+	int sk = 0;
+	time_t te;
 
-	k = 0;
-	i = 0;
-	sk = 0;
-
-	time_t t;
-
-	srand((unsigned int) time(&t));
-	while (i < 2772)
+	srand((unsigned int) time(&te));
+	while (in < 2772)
 	{
-		k = rand() % 128;
-		if ((i + k) > 2772)
+		kn = rand() % 128;
+		if ((in + kn) > 2772)
 			break;
-		i += k;
-		printf("%c", k);
+		in += kn;
 		sk++;
+		printf("%c", kn);
 	}
-	printf("%c\n", (2772 - i));
+	printf("%c\n", (2772 - in));
 	return (0);
 }
