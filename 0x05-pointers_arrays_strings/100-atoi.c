@@ -9,29 +9,30 @@
 
 int _atoi(char *s)
 {
-	int in = 0;
+
 	int ms = 0;
+	int in = 0;
 	int rt = 0;
+	short bl = 0;
 	int sr = 0;
-	short bol = 0;
 	ms = -1;
 
 	while (s[in] != '\0')
 	{
 		if (s[in] == '-')
-			ms *= -1;
+			ms = ms * -1;
 
 		if (s[in] >= '0' && s[in] <= '9')
 		{
-			rt *= 10;
-			rt -= (s[in] - '0');
-			bol = 1;
+			rt = rt * 10;
+			rt = rt - (s[in] - '0');
+			bl = 1;
 		}
-		else if (bol == 1)
+		else if (bl == 1)
 			break;
 		in++;
+		sr++;
 	}
-	rt *= ms;
-	st++;
+	rt = rt * ms;
 	return (rt);
 }
