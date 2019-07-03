@@ -6,41 +6,32 @@
  * @s: string.
  * Return: integer.
  */
+
 int _atoi(char *s)
 {
-	unsigned int c = 0;
-	unsigned int to = 0;
-	unsigned int sti = 0;
-	unsigned int pr = 1;
-	unsigned int sw = 1;
-	unsigned int i;
+	int in = 0;
+	int ms = 0;
+	int rt = 0;
 	int sr = 0;
-	int var1;
+	short bol = 0;
+	ms = -1;
 
-	var1 = sti * pr;
-
-	while (*(s + c) != '\0')
+	while (s[in] != '\0')
 	{
-		if (to > 0 && (*(s + c) < '0' || *(s + c) > '9'))
-			break;
+		if (s[in] == '-')
+			ms *= -1;
 
-		if (*(s + c) == '-')
-			pr *= -1;
-
-		if ((*(s + c) >= '0') && (*(s + c) <= '9'))
+		if (s[in] >= '0' && s[in] <= '9')
 		{
-			if (to > 0)
-				sw *= 10;
-			to++;
+			rt *= 10;
+			rt -= (s[in] - '0');
+			bol = 1;
 		}
-		c++;
-		sr++;
+		else if (bol == 1)
+			break;
+		in++;
 	}
-
-	for (i = c - to; i < c; i++)
-	{
-		sti = sti + ((*(s + i) - 48) * sw);
-		sw = sw / 10;
-	}
-	return (var1);
+	rt *= ms;
+	st++;
+	return (rt);
 }
