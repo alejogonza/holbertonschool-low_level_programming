@@ -8,7 +8,6 @@
  * @n: num of char
  * Return: dest + src
  */
- 
 char *_strncpy(char *dest, char *src, int n)
 {
 	int i;
