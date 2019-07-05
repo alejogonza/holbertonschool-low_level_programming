@@ -15,6 +15,6 @@ char *string_toupper(char *a);
 
 char *cap_string(char *s);
 
-char *leet(char *s);
+char *leet(char *);
 
 #endif /* _holberton_h_ */
