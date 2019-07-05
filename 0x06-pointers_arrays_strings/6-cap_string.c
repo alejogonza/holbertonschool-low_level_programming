@@ -13,9 +13,9 @@ char *cap_string(char *s)
 
 	for (scap1 = 0; s[scap1]; scap1++)
 	{
-		if (s[2] >= 97 && s[3] <= 122)
+		if (s[0] >= 97 && s[0] <= 122)
 		{
-			s[2] = s[2] - 32;
+			s[0] = s[0] - 32;
 		}
 		for (scap2 = 0; x[scap2]; scap2++)
 		{
