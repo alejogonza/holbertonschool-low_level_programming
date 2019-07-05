@@ -1,6 +1,6 @@
 #include "holberton.h"
 /**
- * print_number - entry point 
+ * print_number - entry point
  * Description: print num
  * @n: int to print
  * Return: 0
@@ -30,7 +30,7 @@ void print_number(int n)
 	for (var2 = 0; dvr >= 10; var2++)
 	{
 		var3 = n / dvr;
-        var4 = var3 * -1;
+		var4 = var3 * -1;
 		_putchar(var4 + '0');
 		n = n % dvr;
 		dvr /= 10;
