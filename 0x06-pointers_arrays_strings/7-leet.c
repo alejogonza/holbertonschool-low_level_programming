@@ -3,24 +3,24 @@
  * leet - entry point
  * Description: encode string
  * @s: string to crypted
- * Return: s
+ * Return: encode
  */
 char *leet(char *s)
 {
-	int i = 0;
+	int chc = 0;
 
-	for (; s[i]; i++)
+	for (; s[chc]; chc++)
 	{
-		if ((s[i] == 'a') || (s[i] == 'A'))
-			s[i] = '4';
-		if ((s[i] == 'e') || (s[i] == 'E'))
-			s[i] = '3';
-		if ((s[i] == 'o') || (s[i] == 'O'))
-			s[i] = '0';
-		if ((s[i] == 't') || (s[i] == 'T'))
-			s[i] = '7';
-		if ((s[i] == 'l') || (s[i] == 'L'))
-			s[i] = '1';
+		if ((s[chc] == 'a') || (s[chc] == 'A'))
+			s[chc] = '4';
+		else if ((s[chc] == 'e') || (s[chc] == 'E'))
+			s[chc] = '3';
+		else if ((s[chc] == 'o') || (s[chc] == 'O'))
+			s[chc] = '0';
+		else if ((s[chc] == 't') || (s[chc] == 'T'))
+			s[chc] = '7';
+		else if ((s[chc] == 'l') || (s[chc] == 'L'))
+			s[chc] = '1';
 	}
 
 	return (s);
