@@ -5,23 +5,24 @@
  * @s: string to crypted
  * Return: encode
  */
+
 char *leet(char *s)
 {
-	int i = 0;
+	int var1;
+	int var2;
+	char wrd[10] = "aAeEoOtTlL";
+	char num[10] = "4433007711";
 
-	for (i = 0; s[i]; i++)
+	for (var1 = 0; s[var1]; var1++)
 	{
-		if ((s[i] == 'a') || (s[i] == 'A'))
-			s[i] = '4';
-		else if ((s[i] == 'e') || (s[i] == 'E'))
-			s[i] = '3';
-		else if ((s[i] == 'o') || (s[i] == 'O'))
-			s[i] = '0';
-		else if ((s[i] == 't') || (s[i] == 'T'))
-			s[i] = '7';
-		else if ((s[i] == 'l') || (s[i] == 'L'))
-			s[i] = '1';
+		for (var2 = 0; wrd[var2]; var2++)
+		{
+			if (s[var1] == wrd[var2])
+			{
+				s[var1] = num[var2];
+				break;
+			}
+		}
 	}
-
 	return (s);
 }
