@@ -7,20 +7,20 @@
  */
 char *leet(char *s)
 {
-	int chc = 0;
+	int i = 0;
 
-	for (; s[chc]; chc++)
+	for (i = 0; s[i]; i++)
 	{
-		if ((s[chc] == 'a') || (s[chc] == 'A'))
-			s[chc] = '4';
-		else if ((s[chc] == 'e') || (s[chc] == 'E'))
-			s[chc] = '3';
-		else if ((s[chc] == 'o') || (s[chc] == 'O'))
-			s[chc] = '0';
-		else if ((s[chc] == 't') || (s[chc] == 'T'))
-			s[chc] = '7';
-		else if ((s[chc] == 'l') || (s[chc] == 'L'))
-			s[chc] = '1';
+		if ((s[i] == 'a') || (s[i] == 'A'))
+			s[i] = '4';
+		else if ((s[i] == 'e') || (s[i] == 'E'))
+			s[i] = '3';
+		else if ((s[i] == 'o') || (s[i] == 'O'))
+			s[i] = '0';
+		else if ((s[i] == 't') || (s[i] == 'T'))
+			s[i] = '7';
+		else if ((s[i] == 'l') || (s[i] == 'L'))
+			s[i] = '1';
 	}
 
 	return (s);
