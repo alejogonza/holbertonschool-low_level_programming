@@ -8,7 +8,7 @@
 char *cap_string(char *s)
 {
 	int scap1;
-    int scap2;
+	int scap2;
 	char x[16] = " \t\n,;.!?\"(){}";
 
 	for (scap1 = 0; s[scap1]; scap1++)
