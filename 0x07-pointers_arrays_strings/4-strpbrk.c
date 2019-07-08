@@ -1,3 +1,4 @@
+
 #include "holberton.h"
 /**
  * char *_strpbrk - entry point
@@ -21,5 +22,5 @@ char *_strpbrk(char *s, char *accept)
 		}
 	}
 	return ('\0');
-	twolp: return (s + cha1);
+twolp: return (s + cha1);
 }
