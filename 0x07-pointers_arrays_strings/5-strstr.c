@@ -9,25 +9,21 @@
 
 char *_strstr(char *haystack, char *needle)
 {
-	unsigned int var1;
-	unsigned int var2;
-	unsigned int blan;
+	char *phaystack;
+	char *pneedle = needle;
 
-	for (var1 = 0; *(haystack + var1) != '\0'; var1++)
+	while (*haystack != '\0')
 	{
-		blan = 1;
-		for (var2 = 0; *(needle + var2) != '\0'; var2++)
+		needle = pneedle;
+		phaystack = haystack;
+		while (*needle != '\0' && *haystack != '\0' && *haystack == *needle)
 		{
-			if (*(haystack + var2 + var1) == *(needle + var2))
-				blan = 0;
-			else
-			{
-				blan = 1;
-				break;
-			}
+			needle++;
+			haystack++;
 		}
-		if (blan == 0)
-			break;
+		if (*needle == '\0')
+			return (phaystack);
+		haystack = phaystack + 1;
 	}
-	return (haystack + var1);
+	return ('\0');
 }
