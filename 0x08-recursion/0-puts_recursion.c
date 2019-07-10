@@ -2,11 +2,10 @@
 
 /**
  * _puts_recursion - entry point
- * Description: prints a string
+ * Description: prints a string whith \n
  * @s: string
- * Return: the void
+ * Return: no return.
  */
-
 void _puts_recursion(char *s)
 {
 	if (*s != '\0')
