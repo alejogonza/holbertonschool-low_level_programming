@@ -2,8 +2,8 @@
 
 /**
  * _puts_recursion - entry point
- * Description: prints a string whith \n
- * @s: string
+ * Description: prints a string with \n
+ * @s: string param
  * Return: no return.
  */
 void _puts_recursion(char *s)
@@ -14,5 +14,8 @@ void _puts_recursion(char *s)
 		_puts_recursion(s + 1);
 	}
 	else
+	{
 		_putchar('\n');
+		return;
+	}
 }
