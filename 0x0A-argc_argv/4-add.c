@@ -1,35 +1,63 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include <ctype.h>
-#include "stdlib.h"
+/**
+ * nums - entry point
+ * Description: check num is an int
+ * @num: val to check if is an int
+ * Return: 1 = int 0 if not
+ */
+int nums(char num[])
+{
+	int digit;
+
+	digit = 0;
+
+	if (num[0] == '-')
+		digit = 1;
+	for (; num[digit] != 0; digit++)
+	{
+		if (!isdigit(num[digit]))
+			return (0);
+	}
+	return (1);
+}
 /**
  * main - entry point
- * Descritpion: adds positive numbers
- * @argc: nums of args
- * @argv: the array with args
- * Return: 0 or 1 = not numbers
+ * @argc: num of args pass to main
+ * @argv: array of pointers pass to main
+ * Return: 0
  */
-
 int main(int argc, char *argv[])
 {
-	int counter;
-	int put = 0;
-	int sup = 0;
+	int digit2;
+	int put;
+	long res;
 
-	for (counter = 1; counter < argc; counter++)
+	digit2 = 1;
+	res = 0;
+
+	if (argc < 1)
 	{
-		for (sup = 0; argv[counter][sup]; sup++)
+		printf("0\n");
+	} else
+	{
+		while (digit2 < argc)
 		{
-			if (isdigit(argv[counter][sup]) == 0)
+			if (nums(argv[digit2]))
+			{
+				put = atoi(argv[digit2]);
+				res += put;
+			}
+			else
 			{
 				printf("Error\n");
-				return (1);
+				break;
 			}
+			digit2++;
 		}
-		if (isdigit(*argv[counter]) != 0)
-		{
-			put = put + atoi(argv[counter]);
-		}
+		if (digit2 == argc)
+			printf("%ld\n", res);
 	}
-	printf("%d\n", put);
 	return (0);
 }
