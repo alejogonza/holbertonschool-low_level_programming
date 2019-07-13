@@ -12,11 +12,8 @@
 int main(int argc, char *argv[])
 {
 	int counter;
-	int put;
-	int sup;
-
-	put = 0;
-	sup = 0;
+	int put = 0;
+	int sup = 0;
 
 	for (counter = 1; counter < argc; counter++)
 	{
