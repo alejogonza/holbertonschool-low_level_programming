@@ -1,47 +1,50 @@
+#include "holberton.h"
 #include <stdio.h>
 #include <stdlib.h>
-#include "holberton.h"
 /**
- * argstostr - entry point
- * Description: concatenates all of the arguments of the program
- * @ac: count of args
- * @av: vals
- * Return: concatenated string
+ **argstostr - entry point
+ * Description: function that concatenates the args in your program
+ * @ac: nums of arguments
+ * @av: * to arguments
+ *Return: * to a new string or NULL = fails
  */
 char *argstostr(int ac, char **av)
 {
-	int a;
-	int b;
-	int c;
-	int d;
+	int c1, c2 lt, a;
+	char *nw;
 
-	c = 0;
-	d = 0;
-
-	char *s = NULL;
-
-	if ((ac == 0) && (av == NULL))
-		return (NULL);
-
-	for (a = 0; a < ac; a++)
-
-		for (b = 0; av[a][b]; b++)
-		{
-			d++;
-		}
-
-	s = (char *)malloc((d + ac + 1) * sizeof(char));
-
-	if (s == NULL)
-		return (NULL);
-
-	for (a = 0; a < ac; a++)
+	lt = 0;
+	a = 0;
+	if (ac == 0)
 	{
-		for (b = 0; av[a][b]; b++)
-			s[c++] = av[a][b];
-		s[c++] = '\n';
+		return (NULL);
 	}
-	s[c] = '\0';
-
-	return (s);
+	for (c1 = 0; c1 < ac; c1++)
+	{
+		if (av[c1] == NULL)
+		{
+			return (NULL);
+		}
+		for (c2 = 0; av[c1][c2]; c2++)
+		{
+			lt++;
+		}
+	}
+	nw = malloc(sizeof(char) * (lt + ac + 1));
+	if (nw == NULL)
+	{
+		free(nw);
+		return (NULL);
+	}
+	for (c1 = 0; c1 < ac; c1++)
+	{
+		for (c2 = 0; av[c1][c2]; c2++)
+		{
+			nw[a] = av[c1][c2];
+			a++;
+		}
+		nw[a] = '\n';
+		a++;
+	}
+	return (nw);
 }
