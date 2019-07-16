@@ -2,27 +2,62 @@
 #include <stdlib.h>
 #include <ctype.h>
 /**
- * main - adds positive numbers.
- * @argc: number of command line arguments.
- * @argv: array that contains the program command line arguments.
- * Return: 0 - success.
+ * nums - entry point
+ * Description: check num is an int
+ * @num: val to check if is an int
+ * Return: 1 = int 0 if not
+ */
+int nums(char num[])
+{
+	int digit;
+
+	digit = 0;
+
+	if (num[0] == '-')
+		digit = 1;
+	for (; num[digit] != 0; digit++)
+	{
+		if (!isdigit(num[digit]))
+			return (0);
+	}
+	return (1);
+}
+/**
+ * main - entry point
+ * @argc: num of args pass to main
+ * @argv: array of pointers pass to main
+ * Return: 0
  */
 int main(int argc, char *argv[])
 {
-	int i, j, add = 0;
+	int digit2;
+	int put;
+	long res;
 
-	for (i = 1; i < argc; i++)
+	digit2 = 1;
+	res = 0;
+
+	if (argc < 1)
 	{
-		for (j = 0; argv[i][j] != '\0'; j++)
+		printf("0\n");
+	} else
+	{
+		while (digit2 < argc)
 		{
-			if (!isdigit(argv[i][j]))
+			if (nums(argv[digit2]))
+			{
+				put = atoi(argv[digit2]);
+				res += put;
+			}
+			else
 			{
 				printf("Error\n");
-				return (1);
+				break;
 			}
+			digit2++;
 		}
-		add += atoi(argv[i]);
+		if (digit2 == argc)
+			printf("%ld\n", res);
 	}
-	printf("%d\n", add);
 	return (0);
 }
