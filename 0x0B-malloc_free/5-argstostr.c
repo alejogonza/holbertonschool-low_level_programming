@@ -20,7 +20,7 @@ char *argstostr(int ac, char **av)
 
 	char *s = NULL;
 
-	if ((ac == 0) || (av == NULL))
+	if ((ac == 0) && (av == NULL))
 		return (NULL);
 
 	for (a = 0; a < ac; a++)
