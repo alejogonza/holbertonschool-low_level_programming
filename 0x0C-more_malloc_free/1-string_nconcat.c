@@ -1,7 +1,23 @@
 #include "holberton.h"
-#include "clstring.c"
 #include <stdlib.h>
 #include <string.h>
+
+/**
+* clstring - provides string length.
+* @s: The string
+* Return: length of string.
+*/
+
+int clstring(char *s)
+{
+	unsigned int i;
+
+	i = 0;
+	while (s[i] != '\0')
+		i++;
+	return (i);
+}
+
 /**
 * string_nconcat - entry point
 * Description: function that concatenates two strings.
