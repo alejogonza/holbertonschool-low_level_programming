@@ -66,9 +66,15 @@ int cwords(char *s)
 char **strtow(char *str)
 {
 	char **ptr = NULL;
+<<<<<<< HEAD
 	int numofW, a, b, c, d, e;
 
 	numofW, c, d, e = 0;
+=======
+	int a, b;
+	int numofW, c, d, e = 0;
+
+>>>>>>> 5fad8569a5e4bc41ded97cc4aa15562163272f58
 	if ((str == NULL) || (*str == '\0'))
 		return (NULL);
 	numofW = cwords(str), ptr = malloc((numofW + 1) * sizeof(char *));
@@ -98,7 +104,12 @@ char **strtow(char *str)
 	b = 0, d = 0;
 	while (d < numofW)
 	{
+<<<<<<< HEAD
 		for (; str[b] && (str[b] == ' '); b++);
+=======
+		for (; str[b] && (str[b] == ' '); b++)
+			;
+>>>>>>> 5fad8569a5e4bc41ded97cc4aa15562163272f58
 		e = 0;
 		for (a = b; str[a] && (str[a] != ' '); a++)
 			ptr[d][e++] = str[a];
