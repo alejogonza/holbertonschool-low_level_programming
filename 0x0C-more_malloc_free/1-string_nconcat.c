@@ -13,9 +13,9 @@ char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
 	char *stgcount;
 	unsigned int list1;
-    unsigned int list2;
-    unsigned int lgt;
-    unsigned int ccat;
+	unsigned int list2;
+	unsigned int lgt;
+	unsigned int ccat;
 
 	if (s1 == NULL)
 		s1 = "";
