@@ -11,9 +11,9 @@
 int main(int argc, char *argv[])
 {
 	long int mul;
-    long int num1;
-    long int num2;
-    long int plus;
+	long int num1;
+	long int num2;
+	long int plus;
 
 	if (argc != 3)
 	{
