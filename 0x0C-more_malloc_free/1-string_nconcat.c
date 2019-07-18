@@ -1,22 +1,5 @@
 #include "holberton.h"
 #include <stdlib.h>
-#include <string.h>
-
-/**
-* clstring - provides string length.
-* @s: The string
-* Return: length of string.
-*/
-
-int clstring(char *s)
-{
-	unsigned int i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
 
 /**
 * string_nconcat - entry point
@@ -28,33 +11,41 @@ int clstring(char *s)
 */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int cstring;
-	char *nstring;
-	int fchar;
-	int ccat;
+	char *stgcount;
+	unsigned int list1;
+    unsigned int list2;
+    unsigned int lgt;
+    unsigned int ccat;
 
-	if (n <= 0)
-		return (NULL);
 	if (s1 == NULL)
 		s1 = "";
+
 	if (s2 == NULL)
 		s2 = "";
 
-	if (n >= (unsigned int)clstring(s2))
-		cstring = clstring(s2);
-	else
-		cstring = n;
+	for (list1 = 0; s1[list1] != '\0'; list1++)
+		;
 
-	nstring = (char *)malloc(cstring + clstring(s1));
-	if (nstring == NULL)
-	{
-		free(nstring);
+	for (list2 = 0; s2[list2] != '\0'; list2++)
+		;
+
+	if (n > list2)
+		n = list2;
+
+	lgt = list1 + n;
+
+	stgcount = malloc(lgt + 1);
+
+	if (stgcount == NULL)
 		return (NULL);
-	}
-	for (fchar = 0; fchar < clstring(s1); fchar++)
-		nstring[fchar] = s1[fchar];
-	for (ccat = 0; ccat < cstring ; ccat++)
-		nstring[fchar + ccat] = s2[ccat];
 
-	return (nstring);
+	for (ccat = 0; ccat < lgt; ccat++)
+		if (ccat < list1)
+			stgcount[ccat] = s1[ccat];
+		else
+			stgcount[ccat] = s2[ccat - list1];
+
+	stgcount[ccat] = '\0';
+
+	return (stgcount);
 }
