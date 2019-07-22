@@ -1,6 +1,7 @@
-#ifndef FUNCTION_LIKE_MACRO
-#define FUNCTION_LIKE_MACRO
+#ifndef ABSOLUTE_HEADER
+#define ABSOLUTE_HEADER
 
 #define ABS(x) ((x) < 0 ? (0 - x) : (x))
 
-#endif /** 3-function_like_macro */
+#endif /** ABSOLUTE HEADER */
+
