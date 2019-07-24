@@ -18,7 +18,7 @@ int (*get_op_func(char *s))(int, int)
 		{NULL, NULL}
 	};
 
-    int optor = 0;
+	int optor = 0;
 
 	while (optor < 5)
 	{
