@@ -10,9 +10,8 @@
 
 void free_list(list_t *head)
 {
-	list_t *data;
 
-	if ((data = head) != NULL)
+	if (head != NULL)
 	{
 		free(head->str);
 
