@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * add_node - add node in the end
+ * add_node_end - add node in the end
  * @head: linked list in the beginning.
  * @str: Data
  * Return: success adress of head fail null
