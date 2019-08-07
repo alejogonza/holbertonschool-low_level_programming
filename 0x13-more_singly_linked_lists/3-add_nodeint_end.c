@@ -7,9 +7,9 @@
  * Return: number of elements
  */
 listint_t *add_nodeint_end(listint_t **head, const int n)
-{	
-    
-    listint_t *tempval;
+{
+
+	listint_t *tempval;
 	listint_t *nnode;
 
 	nnode = malloc(sizeof(listint_t));
