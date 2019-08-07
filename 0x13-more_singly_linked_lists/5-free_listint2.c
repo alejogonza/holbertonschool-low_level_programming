@@ -12,15 +12,15 @@ void free_listint2(listint_t **head)
 	listint_t *tempinfonode;
 	listint_t *ncurrent;
 
-    if (head != NULL)
-    {
-	    ncurrent = *head;
-	    while (ncurrent != NULL)
-	    {
-		    tempinfonode = ncurrent->next;
-		    ncurrent = tempinfonode;
-		    free(tempinfonode);
-	    }
-	    *head = NULL;
-    }
+	if (head != NULL)
+	{
+		ncurrent = *head;
+		while (ncurrent != NULL)
+		{
+			tempinfonode = ncurrent->next;
+			ncurrent = tempinfonode;
+			free(tempinfonode);
+		}
+		*head = NULL;
+	}
 }
