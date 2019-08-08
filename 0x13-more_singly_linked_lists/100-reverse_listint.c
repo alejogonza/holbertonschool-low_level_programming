@@ -1,9 +1,9 @@
 #include "lists.h"
-/**                                                                  
- * reverse_listint - entry point                                     
- * Description: Reverse a linked list                                
- * @head: ** to head                                                 
- * Return: * to 1st node                                             
+/**
+ * reverse_listint - entry point
+ * Description: Reverse a linked list
+ * @head: ** to head
+ * Return: * to 1st node
  */
 
 
