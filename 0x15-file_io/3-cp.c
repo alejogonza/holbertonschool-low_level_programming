@@ -1,50 +1,56 @@
 #include "holberton.h"
+#define ERRO97  "Usage: cp file_from file_to\n"
+#define ERRO98  "Error: Can't read from file "
+#define ERRO99  "Error: Can't write to "
+#define ERRO100 "Error: Can't close fd "
+#define NBYTES 1204
 /**
  * main - entry point
- * Description: program that copies the content of a file to another file
- * @argc: number of elements
- * @argv: file to copy
+ * Description: copies the content of a file to another file
+ * @argc: num of args
+ * @argv: args passed to cp
  * Return: 0
  */
-
 int main(int argc, char **argv)
 {
-	int fperm, fperm2;
-	ssize_t x, y;
-	char z[1024];
+	int filep, filered, argcou = NBYTES, esqcoword = 0, perm = 0;
+	char buffer[NBYTES] = { 0 };
 
 	if (argc != 3)
-		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n"),
-		exit(97);
-	fperm = open(argv[1], O_RDONLY);
-	fperm2 = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	y = read(fperm, z, 1024);
-	if (y == -1)
-		dprintf(STDERR_FILENO,
-			"Error: Can't read from file%s\n", argv[1]),
-			exit(98);
-	while (y)
 	{
-	x = write(fperm2, z, y);
-	if (x == -1)
-		dprintf(STDERR_FILENO,
-			"Error: Can't write to %s\n", argv[2]),
-			exit(99);
-	y = read(fperm, z, 1024);
-	if (y == -1)
-		dprintf(STDERR_FILENO,
-			"Error: Can't read from file%s\n", argv[1]),
-			exit(98);
+		write(STDERR_FILENO, ERRO97, 28), exit(97);
 	}
-	x = close(fperm);
-	if (x == -1)
-		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %i\n", fperm),
-			exit(100);
-	x = close(fperm2);
-	if (x == -1)
-		dprintf(STDERR_FILENO,
-			"Error: Can't close fd %i\n", fperm2),
-			exit(100);
+	perm = S_IRUSR | S_IWUSR | S_IRGRP | S_IWGRP | S_IROTH;
+	filep = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, perm);
+	if (filep == -1)
+	{
+		dprintf(STDERR_FILENO, "%s%s\n", ERRO99, argv[2]);
+		exit(99);
+	}
+	filered = open(argv[1], O_RDONLY);
+	if (filered == -1)
+	{
+		dprintf(STDERR_FILENO, "%s%s\n", ERRO98, argv[1]);
+		exit(98);
+	}
+	while (argcou == NBYTES)
+	{
+		argcou = read(filered, buffer, NBYTES);
+		if (argcou == -1)
+		{
+			dprintf(STDERR_FILENO, "%s%s\n", ERRO98, argv[1]);
+			exit(98);
+		}
+		esqcoword = write(filep, buffer, argcou);
+		if (esqcoword == -1)
+		{
+			dprintf(STDERR_FILENO, "%s%s\n", ERRO99, argv[2]);
+			exit(99);
+		}
+	}
+	if (close(filep) != 0)
+		dprintf(STDERR_FILENO, "%s%d\n", ERRO100, filep), exit(100);
+	if (close(filered) != 0)
+		dprintf(STDERR_FILENO, "%s%d\n", ERRO100, filered), exit(100);
 	return (0);
 }
