@@ -10,6 +10,12 @@ size_t free_listint_safe(listint_t **h)
 	listint_t *tmp, *act;
 	size_t cter = 0;
 
+	listint_t *hdone = NULL;
+	listint_t *tse = NULL;
+
+	tse = tse;
+	hdone = hdone;
+
 	if (h && *h)
 	{
 
