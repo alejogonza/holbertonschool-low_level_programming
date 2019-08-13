@@ -1,4 +1,3 @@
-
 #include <stdio.h>
 #include <ctype.h>
 #include "stdlib.h"
@@ -12,37 +11,39 @@
 
 int main(int argc, char *argv[])
 {
-	int counter;
-	int nums;
-	int sup;
+	int cts;
+	int nmoney = 0;
 
-	sup = 0;
+	nmoney = 0;
 
-	int start[] = {25, 10, 5, 2, 1};
-
-	if (argc != 2)
+	if (argc == 1 || argc > 2)
 	{
 		printf("Error\n");
 		return (1);
 	}
-		nums = atoi(argv[1]);
-		if (nums < 0)
-		{
-			printf("0\n");
-			return (1);
-		}
-		for (counter = 0; start[counter]; counter++)
-		{
-		if (nums >= start[counter])
-		{
-			sup = sup + (nums / start[counter]);
-			nums = nums % start[counter];
-		}
-		if (nums == 0)
-		{
-			break;
-		}
+
+	cts = atoi(argv[1]);
+
+	while (cts > 0)
+	{
+		if (cts >= 25)
+			cts -= 25;
+
+		else if (cts >= 10)
+			cts -= 10;
+
+		else if (cts >= 5)
+			cts -= 5;
+
+		else if (cts >= 2)
+			cts -= 2;
+
+		else if (cts >= 1)
+			cts -= 1;
+
+		nmoney += 1;
 	}
-		printf("%d\n", sup);
-		return (0);
+
+	printf("%d\n", nmoney);
+	return (0);
 }
