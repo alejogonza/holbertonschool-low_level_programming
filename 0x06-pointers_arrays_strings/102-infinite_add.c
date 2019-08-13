@@ -15,9 +15,9 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 	int a2;
 	int a3;
 	int a4;
-	int a5;
+	int a5 = 0;
 	int sum;
-	int add;
+	int add = 0;
 	char *a, *b;
 
 	for (a1 = 0; n1[a1] != '\0'; a1++)
@@ -28,7 +28,7 @@ char *infinite_add(char *n1, char *n2, char *r, int size_r)
 
 	(a1 > a2) ? (a = n1, b = n2) : (a = n2, b = n1);
 
-	for (a3 = a1 - 1, a4 = a2 - 1, a5 = 0, add = 0; a3 >= 0 || add != 0; a3--, a4--, a5++)
+	for (a3 = a1 - 1, a4 = a2 - 1; a3 >= 0 || add != 0; a3--, a4--, a5++)
 	{
 		sum = (a3 >= 0) ? ((a[a3] - 48) + add) : add;
 		sum = (a4 >= 0) ? ((b[a4] - 48) + sum) : sum;
