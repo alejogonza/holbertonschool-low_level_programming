@@ -1,6 +1,8 @@
 #ifndef HOLBERTON_H
 #define HOLBERTON_H
 
+# include <stdint.h>
+
 #include <stdlib.h>
 
 #include <stdio.h>
