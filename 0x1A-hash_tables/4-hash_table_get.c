@@ -10,26 +10,23 @@
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
 {
-	unsigned long ind;
-	hash_node_t *trav;
-	int count;
+	unsigned long int ind = 0;
+	hash_node_t *actual = NULL;
 
-	if (ht  == NULL || key == NULL)
+	if (!key || !strcmp(key, "") || (ht == NULL))
 		return (NULL);
 
-	ind = key_index((const unsigned char *)key, ht->size);
-
-	trav = ht->array[ind];
-
-	if (trav == NULL)
+	if (ht->array == NULL)
 		return (NULL);
 
-	for (count = strcmp(key, trav->key); trav != NULL; )
+	ind = hash_djb2((const unsigned char *)key) % ht->size;
+
+	actual = ht->array[ind];
+	while (actual)
 	{
-		if (count == 0)
-			return (trav->value);
-		trav = trav->next;
+		if (!strcmp(actual->key, key))
+			return (actual->value);
+		actual = actual->next;
 	}
-
 	return (NULL);
 }
