@@ -1,6 +1,6 @@
 #include "sort.h"
 /**
- * quick_sort_rec - sorts an arr of int in ascending order selection sort algorithm recursion
+ * quick_sort_rec - sorts an arr of int in ascending order selection
  * @array: * to array
  * @size: size of the array
  * @array_init: init * to array
@@ -46,7 +46,7 @@ void quick_sort_rec(int *array_init, size_t size_init, int *array, size_t size)
 	}
 }
 /**
- * quick_sort - sorts an array of int in ascending order selection sort algorithm
+ * quick_sort - sorts an array of int in ascending order selection sort
  * @array: * to array
  * @size: size of the array
 **/
