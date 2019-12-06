@@ -1,5 +1,4 @@
 #include "binary_trees.h"
-
 /**
  * binary_tree_is_leaf - checks node is leaf
  * @node: pointer input
