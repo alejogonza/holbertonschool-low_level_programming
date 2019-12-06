@@ -8,12 +8,12 @@
  */
 binary_tree_t *binary_tree_node(binary_tree_t *parent, int value)
 {
-	binary_tree_t *btree = NULL;
+	binary_tree_t *bintree = NULL;
 
-	btree = calloc(1, sizeof(binary_tree_t));
-	if (!btree)
+	bintree = calloc(1, sizeof(binary_tree_t));
+	if (!bintree)
 		return (NULL);
-	btree->parent = parent;
-	btree->n = value;
-	return (btree);
+	bintree->parent = parent;
+	bintree->n = value;
+	return (bintree);
 }
