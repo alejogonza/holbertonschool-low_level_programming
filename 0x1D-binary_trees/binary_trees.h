@@ -4,6 +4,8 @@
 #include <stdlib.h>
 #include <stddef.h>
 
+#define M_TREE(a, b) ((a) > (b) ? (a) : (b))
+
 /**
  * struct binary_tree_s - Binary tree node
  *
